@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+รายชื่อผู้ป่วย
+{% endblock title %}
+ {% block content %}
+ <div class="row">
+ 
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">ชื่อ</th>
+                  <th scope="col">สกุล</th>
+                  <th scope="col">เพศ</th>
+                  <th scope="col">อายุ</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for patient in patients %}
+                <tr>
+                  <td>#</td>
+                  <td>{{patient.f_name}}</td>
+                  <td>{{patient.l_name}}</td>
+                  <td>{{patient.sex}}</td>
+                  <td>{{patient.age}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+ 
+ </div class="row">
+ {% endblock content %}
+
